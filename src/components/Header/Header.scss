@@ -1,0 +1,83 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+.header {
+  padding-block: 10px;
+
+  background-color: $page-black-color;
+
+  @include onMobile {
+    background-color: transparent;
+    padding-block: 16px;
+  }
+
+  &--menu {
+    height: 100vh;
+    background-color: $page-black-color;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+
+    @include onMobile {
+      justify-content: space-between;
+
+      position: relative;
+    }
+  }
+
+  &__logo {
+    width: 42px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    background-image: url('../../images/global/page__logo.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onMobile {
+      @include figure(64px);
+      border-radius: 32px;
+
+      background-color: $page-black-color;
+    }
+  }
+
+  &__burger-menu {
+    display: none;
+
+    @include figure(64px);
+    border-radius: 32px;
+
+    background-color: $page-black-color;
+    background-image: url('../../images/global/burger-menu.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--close {
+      background-image: url('../../images/global/menu-close.svg');
+    }
+
+    @include onMobile {
+      display: inline-flex;
+    }
+  }
+
+  &__nav {
+    @include onMobile {
+      display: none;
+    }
+
+    &--open {
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      transform: translate(0, 100%)
+    }
+  }
+} 

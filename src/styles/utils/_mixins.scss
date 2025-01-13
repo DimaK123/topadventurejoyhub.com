@@ -1,0 +1,26 @@
+@mixin onMobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin figure($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin title-margin-bottom {
+  margin-bottom: 45px;
+
+  @include onMobile {
+    margin-bottom: 24px;
+  }
+}
+
+@mixin section-padding {
+  padding-block: 80px;
+
+  @include onMobile {
+    padding-block: 50px;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 39px;
+
+    &--column {
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+  }
+
+  &__link {
+    color: #F1EEE9;
+
+    &:hover {
+      color: $page-orange-color;
+
+      @include onMobile {
+        color: $page-black-color;
+      }
+    }
+  }
+}

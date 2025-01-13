@@ -1,0 +1,80 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+$image-count: 7;
+
+.gallery {
+  @include section-padding;
+  background-color: $page-black-color;
+
+  &__section-title {
+    @include title-margin-bottom;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 352px);
+    grid-template-rows: 310px 170px repeat(2, 310px);
+    gap: 32px;
+
+    &-item {
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @for $i from 1 through $image-count {
+        &--#{$i} {
+          background-image: url('../../images/components/Gallery/gallery-slide-#{$i}.avif');
+        }
+      }
+
+      &--2 {
+        grid-row: 1 / 3;
+        grid-column: 2 / 3;
+      }
+
+      &--3 {
+        grid-row: 1 / 3;
+        grid-column: 3 / 4;
+      }
+
+      &--4 {
+        grid-row: 2 / 4;
+        grid-column: 1 / 2;
+      }
+
+      &--5 {
+        grid-row: 3 / 4;
+        grid-column: 2 / 4;
+      }
+
+      &--6 {
+        grid-row: 4 / 5;
+        grid-column: 1 / 3;
+
+        background-position-y: 35%;
+      }
+
+      &--7 {
+        background-size: 180%;
+        background-position-x: 70%;
+        background-position-y: 80%;
+      }
+    }
+  }
+
+  &__swiper-slide {
+    width: 335px;
+    height: 320px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+
+    @for $i from 1 through $image-count {
+      &--#{$i} {
+        background-image: url('../../images/components/Gallery/gallery-slide-#{$i}.avif');
+      }
+    }
+  }
+}

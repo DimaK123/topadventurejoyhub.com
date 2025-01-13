@@ -1,0 +1,45 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/components/Hero/hero-bg.avif');
+  background-size: cover;
+
+  @include onMobile {
+    background-position: center;
+  }
+
+  &__inner {
+    padding: 130px 0 110px;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      height: 100vh;
+      padding: 175px 0 145px;
+    }
+  }
+
+  &__section-title {
+    font-size: 80px;
+    color: #fff;
+
+    margin-bottom: 200px;
+
+    @include onMobile {
+      font-size: 40px;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__action-button {
+    margin: 0 auto;
+
+    @include onMobile {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "../node_modules/normalize-scss/sass/normalize";
+@import './styles/reset.scss';
+@import './styles/utils/variables';
+@import './styles/utils/mixins';
+
+@import './styles/blocks/wrapper';
+@import './styles/blocks/page';
+@import './styles/blocks/section-title.scss';
+@import './styles/blocks/action-button.scss';
+@import './styles/blocks/info-page.scss';

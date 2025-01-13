@@ -1,0 +1,84 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+$image-count: 5;
+
+.price {
+  @include section-padding;
+
+  &__section-title {
+    @include title-margin-bottom;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+
+  }
+
+  &__item {
+    flex: 352px;
+    padding: 16px;
+
+    border: 1px solid #8D8D8D;
+    border-radius: 8px;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+  
+      text-align: center;
+    }
+
+    &-title {
+      font-size: 28px;
+
+      @include onMobile {
+        font-size: 24px;
+      }
+    }
+
+    &-img {
+      height: 90px;
+      width: 190px;
+
+      @for $i from 1 through $image-count {
+        &--#{$i} {
+          background-image: url('../../images/components/Price/price-img-#{$i}.avif');
+        }
+      }
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &--big {
+        width: 240px;
+        height: 150px;
+      }
+    }
+
+    &-price {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: $page-orange-color;
+
+      @include onMobile {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__digit {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    @include onMobile {
+      font-size: 40px;
+    }
+  }
+}

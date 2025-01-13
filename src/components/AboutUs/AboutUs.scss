@@ -1,0 +1,25 @@
+@import '../../styles/utils/mixins';
+
+.about-us {
+  padding: 160px 0 80px;
+
+  background-image: url('../../images/components/AboutUs/about-us-bg.avif');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include onMobile {
+    padding: 80px 0 50px;
+    background-image: url('../../images/components/AboutUs/about-us-bg-mob.avif');
+  }
+
+  &__section-title {
+    @include title-margin-bottom;
+  }
+
+  p {
+    text-align: center;
+    max-width: 928px;
+
+    margin: 0 auto;
+  }
+}
