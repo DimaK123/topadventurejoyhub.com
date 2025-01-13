@@ -14,12 +14,17 @@
     p {
       max-width: 622px;
       color: #F1EEE9;
+
+      @include onMobile {
+        text-align: center;
+      }
     }
   }
 
   &__buttons {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 32px;
   }
 }
